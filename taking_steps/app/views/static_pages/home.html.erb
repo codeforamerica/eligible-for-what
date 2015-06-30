@@ -1,2 +1,67 @@
-<h1>StaticPages#home</h1>
-<p>Find me in app/views/static_pages/home.html.erb</p>
+<h1>Taking Steps</h1>
+<!-- @todo: Move the following intake form to a separate page and refactor all of this as partials. Have home.html be a genuine orientation to what's going on here. -->
+
+<!-- @todo: Wrap this in something appropriate. -->
+  <%= form_tag("/query", method: "get") do %>
+    <!-- @todo: Figure out a better way to handle address. Consider offering to
+         autodetect location, but keep in mind that people might find it creepy. You could try a "Use my location" button a la Gas Buddy, I suppose. -->
+    <%= label_tag(:address, "Please enter your address:") %>
+    <p><em>We will use your address to find services near your location. All personal information will be kept private.</em></p>
+    <%= label_tag(:address_street, "Street address:") %>
+    <%= text_field_tag(:address_street) %>
+    <%= label_tag(:address_apt, "Apartment/unit/floor:") %>
+    <%= text_field_tag(:address_apt) %>
+    <%= label_tag(:address_city, "City:") %>
+    <%= text_field_tag(:address_city) %>
+    <%= label_tag(:address_state, "State:") %>
+    <!-- @todo: Make this the actual default value. -->
+    <!-- @todo: Also, fix this, 'cause it's not actually functioning as a placeholder at the moment. -->
+    <%= text_field_tag(:address_state, :placeholder => 'CA') %>
+    <%= label_tag(:address_zip, "ZIP:") %>
+    <%= text_field_tag(:address_zip) %>
+
+    <!-- Gender -->
+    <%= label_tag(:gender, "What is your gender?") %>
+    <%= radio_button_tag(:gender, "female") %>
+    <%= label_tag(:gender_female, "Female") %>
+    <%= radio_button_tag(:gender, "male") %>
+    <%= label_tag(:gender_male, "Male") %>
+    <%= radio_button_tag(:gender, "other") %>
+    <%= label_tag(:gender_other, "Other") %>
+
+    <%= label_tag(:transgender, "Do you identify as transgender or gender-variant?") %>
+    <%= radio_button_tag(:transgender, "transgender") %>
+    <%= label_tag(:transgender_yes, "Yes") %>
+    <%= radio_button_tag(:transgender, "cisgender") %>
+    <%= label_tag(:transgender_no, "No") %>
+
+    <!-- Race -->
+    <!-- @todo: Check race vs. ethnicity terminology -->
+    <%= label_tag(:race, "How would you describe your race?") %>
+    <%= check_box_tag(:race_black) %>
+    <%= label_tag(:race_black, "Black or African-American") %>
+    <%= check_box_tag(:race_api) %>
+    <%= label_tag(:race_api, "Asian/Pacific Islander") %>
+    <%= check_box_tag(:race_native) %>
+    <%= label_tag(:race_native, "American Indian or Native American") %>
+    <%= check_box_tag(:race_white) %>
+    <%= label_tag(:race_white, "White or Caucasian") %>
+    <%= check_box_tag(:race_latino) %>
+    <%= label_tag(:race_latino, "Hispanic or Latino/a") %>
+    <%= check_box_tag(:race_other) %>
+    <%= label_tag(:race_other, "Other") %>
+
+    <!-- Age -->
+    <%= label_tag(:age, "Age:") %>
+    <%= radio_button_tag(:age, "child") %>
+    <%= label_tag(:age_child, "I am younger than 21") %>
+    <%= radio_button_tag(:age, "adult") %>
+    <%= label_tag(:age_adult, "I'm over 21") %>
+
+
+    <!-- Languages -->
+    <!-- @todo: Expand this to be more about how users can access services than about whether they want ESL classes. -->
+    <%= label_tag(:)
+
+    <%= submit_tag("Submit") %>
+  <% end %>
