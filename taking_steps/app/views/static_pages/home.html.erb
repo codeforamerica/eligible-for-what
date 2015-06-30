@@ -14,9 +14,8 @@
     <%= label_tag(:address_city, "City:") %>
     <%= text_field_tag(:address_city) %>
     <%= label_tag(:address_state, "State:") %>
-    <!-- @todo: Make this the actual default value. -->
-    <!-- @todo: Also, fix this, 'cause it's not actually functioning as a placeholder at the moment. -->
-    <%= text_field_tag(:address_state, :placeholder => 'CA') %>
+    <!-- @todo: Make CA the actual default value. -->
+    <%= text_field_tag(:address_state) %>
     <%= label_tag(:address_zip, "ZIP:") %>
     <%= text_field_tag(:address_zip) %>
 
@@ -61,7 +60,8 @@
 
     <!-- Languages -->
     <!-- @todo: Expand this to be more about how users can access services than about whether they want ESL classes. -->
-    <%= label_tag(:)
+    <%= label_tag(:language, "What language are you most comfortable speaking?") %>
+    <!-- @todo: REPLACE THIS WITH SOMETHING BETTER. -->
 
     <%= submit_tag("Submit") %>
   <% end %>
