@@ -5,6 +5,7 @@
     <!-- @todo: Figure out a better way to handle address. Consider offering to
          autodetect location, but keep in mind that people might find it creepy. You could try a "Use my location" button a la Gas Buddy, I suppose. -->
 
+    <!-- Address -->
     <%= f.form_group :address, label: { text: 'Address'}, help: 'We will use your address to find services near your location. All personal information will be kept private.' do %>
 
         <%= f.text_field :address_street, label: 'Street address:', value: '1234 Main Street' %>
@@ -13,6 +14,17 @@
         <%= f.text_field :address_city, label: 'City:' %>
         <%= f.text_field :address_state, label: 'State:', value: 'CA' %>
         <%= f.number_field :address_zip, label: 'ZIP:' %>
+    <% end %>
+
+    <!-- Gender -->
+    <%= f.form_group :gender, label: { text: 'What is your gender?'} do %>
+        <%= f.radio_button :gender, 0, label: 'Female' %>
+        <%= f.radio_button :gender, 1, label: 'Male' %>
+        <%= f.radio_button :gender, 2, label: 'Other' %>
+    <% end %>
+    <%= f.form_group :transgender, label: { text: 'Do you identify as transgender or gender-variant?'} do %>
+        <%= f.radio_button :transgender, 1, label: 'Yes' %>
+        <%= f.radio_button :transgender, 0, label: 'No' %>
     <% end %>
 
     <%= f.submit %>
