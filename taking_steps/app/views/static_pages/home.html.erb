@@ -27,5 +27,21 @@
         <%= f.radio_button :transgender, 0, label: 'No' %>
     <% end %>
 
+    <!-- Race -->
+    <%= f.form_group :race, label: { text: 'How would you describe your race?'} do %>
+        <%= f.check_box :race, label: 'Black or African-American' %>
+        <%= f.check_box :race, label: 'Asian/Pacific Islander' %>
+        <%= f.check_box :race, label: 'American Indian or Native American' %>
+        <%= f.check_box :race, label: 'White or Caucasian' %>
+        <%= f.check_box :race, label: 'Hispanic or Latino/a' %>
+        <%= f.check_box :race, label: 'Other' %>
+    <% end %>
+
+    <!-- Age -->
+    <%= f.form_group :age, label: { text: 'Age:'} do %>
+        <%= f.radio_button :age, 0, label: 'I am younger than 21' %>
+        <%= f.radio_button :age, 1, label: 'I\'m over 21' %>
+    <% end %>
+
     <%= f.submit %>
   <% end %>
