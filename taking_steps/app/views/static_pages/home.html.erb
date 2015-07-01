@@ -5,8 +5,8 @@
     <!-- @todo: Figure out a better way to handle address. Consider offering to
          autodetect location, but keep in mind that people might find it creepy. You could try a "Use my location" button a la Gas Buddy, I suppose. -->
 
-    <!-- Address -->
-    <%= f.form_group :address, help: 'We will use your address to find services near your location. All personal information will be kept private.' do %>
+    <!-- The documentation says this should be wrapper_class but class is what works. (https://github.com/bootstrap-ruby/rails-bootstrap-forms#additional-form-group-attributes) -->
+    <%= f.form_group :address, class: 'section', help: 'We will use your address to find services near your location. All personal information will be kept private.' do %>
 
         <%= f.text_field :address_street, label: 'Street address:', value: '1234 Main Street' %>
 
@@ -16,19 +16,17 @@
         <%= f.number_field :address_zip, label: 'ZIP:' %>
     <% end %>
 
-    <!-- Gender -->
-    <%= f.form_group :gender, label: { text: 'What is your gender?'} do %>
+    <%= f.form_group :gender, class: 'section', label: { text: 'What is your gender?'} do %>
         <%= f.check_box :gender, label: 'Female' %>
         <%= f.check_box :gender, label: 'Male' %>
         <%= f.check_box :gender, label: 'Other' %>
     <% end %>
-    <%= f.form_group :transgender, label: { text: 'Do you identify as transgender or gender-variant?'} do %>
+    <%= f.form_group :transgender, class: 'section', label: { text: 'Do you identify as transgender or gender-variant?'} do %>
         <%= f.radio_button :transgender, 1, label: 'Yes' %>
         <%= f.radio_button :transgender, 0, label: 'No' %>
     <% end %>
 
-    <!-- Race -->
-    <%= f.form_group :race, label: { text: 'How would you describe your race?'} do %>
+    <%= f.form_group :race, class: 'section', label: { text: 'How would you describe your race?'} do %>
         <%= f.check_box :race, label: 'Black or African-American' %>
         <%= f.check_box :race, label: 'Asian/Pacific Islander' %>
         <%= f.check_box :race, label: 'American Indian or Native American' %>
@@ -37,11 +35,15 @@
         <%= f.check_box :race, label: 'Other' %>
     <% end %>
 
-    <!-- Age -->
-    <%= f.form_group :age, label: { text: 'Age:'} do %>
+    <%= f.form_group :age, class: 'section', label: { text: 'Age:'} do %>
         <%= f.radio_button :age, 0, label: 'I am younger than 21' %>
         <%= f.radio_button :age, 1, label: 'I\'m over 21' %>
     <% end %>
 
-    <%= f.submit %>
+    <%= f.submit 'Submit', id: 'btn-submit' %>
   <% end %>
+
+  <div class="nav-buttons">
+      <button class="btn btn-default btn-previous" type="button">Previous</button>
+      <button class="btn btn-default btn-next" type="button">Next</button>
+  </div>
