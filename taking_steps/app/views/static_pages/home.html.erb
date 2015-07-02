@@ -16,15 +16,17 @@
         <%= f.number_field :address_zip, label: 'ZIP:' %>
     <% end %>
 
-    <%= f.form_group :gender, class: 'section', label: { text: 'What is your gender?'} do %>
-        <%= f.check_box :gender, label: 'Female' %>
-        <%= f.check_box :gender, label: 'Male' %>
-        <%= f.check_box :gender, label: 'Other' %>
-    <% end %>
-    <%= f.form_group :transgender, class: 'section', label: { text: 'Do you identify as transgender or gender-variant?'} do %>
-        <%= f.radio_button :transgender, 1, label: 'Yes' %>
-        <%= f.radio_button :transgender, 0, label: 'No' %>
-    <% end %>
+    <div class="section">
+        <%= f.form_group :gender, label: { text: 'What is your gender?'} do %>
+            <%= f.check_box :gender, label: 'Female' %>
+            <%= f.check_box :gender, label: 'Male' %>
+            <%= f.check_box :gender, label: 'Other' %>
+        <% end %>
+        <%= f.form_group :transgender, label: { text: 'Do you identify as transgender or gender-variant?'} do %>
+            <%= f.radio_button :transgender, 1, label: 'Yes' %>
+            <%= f.radio_button :transgender, 0, label: 'No' %>
+        <% end %>
+    </div>
 
     <%= f.form_group :race, class: 'section', label: { text: 'How would you describe your race?'} do %>
         <%= f.check_box :race, label: 'Black or African-American' %>
