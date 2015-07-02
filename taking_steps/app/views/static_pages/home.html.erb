@@ -35,9 +35,15 @@
         <%= f.check_box :race, label: 'Other' %>
     <% end %>
 
+    <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
+        <%= f.radio_button :veteran, 0, label: 'Yes' %>
+        <%= f.radio_button :veteran, 1, label: 'No' %>
+    <% end %>
+
     <%= f.form_group :age, class: 'section', label: { text: 'Age:'} do %>
-        <%= f.radio_button :age, 0, label: 'I am younger than 21' %>
-        <%= f.radio_button :age, 1, label: 'I\'m over 21' %>
+        <%= f.radio_button :age, 0, label: 'I am younger than 18' %>
+        <%= f.radio_button :age, 1, label: 'I\'m over 18 but not a senior citizen' %>
+        <%= f.radio_button :age, 0, label: 'I\'m a senior citizen' %>
     <% end %>
 
     <%= f.submit 'Submit', id: 'btn-submit' %>
