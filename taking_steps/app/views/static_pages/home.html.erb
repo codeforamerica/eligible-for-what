@@ -74,6 +74,13 @@
         <%= f.check_box :domestic_violence, label: 'Anger management' %>
         <%= f.check_box :domestic_violence, label: 'None of these' %>
     <% end %>
+
+    <%= f.form_group :mental_health, class: 'section', label: { text: 'Would you like help with any of the following?'}, help: 'All of your answers are confidential.' do %>
+        <%= f.check_box :mental_health, label: 'Suicide prevention' %>
+        <%= f.check_box :mental_health, label: 'Mental health counseling or therapy' %>
+        <%= f.check_box :mental_health, label: 'None of these' %>
+    <% end %>
+
     <%= f.submit 'Submit', id: 'btn-submit' %>
   <% end %>
 
