@@ -43,7 +43,7 @@
     <%= f.form_group :age, class: 'section', label: { text: 'Age:'} do %>
         <%= f.radio_button :age, 0, label: 'I am younger than 18' %>
         <%= f.radio_button :age, 1, label: 'I\'m over 18 but not a senior citizen' %>
-        <%= f.radio_button :age, 0, label: 'I\'m a senior citizen' %>
+        <%= f.radio_button :age, 2, label: 'I\'m a senior citizen' %>
     <% end %>
 
     <%= f.submit 'Submit', id: 'btn-submit' %>
