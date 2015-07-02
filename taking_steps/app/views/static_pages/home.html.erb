@@ -67,31 +67,13 @@
         <%= f.radio_button :abuse_physical_past_month, 1, label: 'No' %>
     <% end %>
 
-    <div class="section">
-        <p>Would you like help with any of the following?<br />
-            <em>All your answers are confidential.</em>
-        </p>
-        <%= f.form_group :domestic_violence_hotline, label: { text: 'Domestic violence hotline'} do %>
-            <%= f.radio_button :domestic_violence_hotline, 0, label: 'Yes' %>
-            <%= f.radio_button :domestic_violence_hotline, 1, label: 'No' %>
-        <% end %>
-        <%= f.form_group :domestic_violence_counseling, label: { text: 'Domestic violence counseling'} do %>
-            <%= f.radio_button :domestic_violence_counseling, 0, label: 'Yes' %>
-            <%= f.radio_button :domestic_violence_counseling, 1, label: 'No' %>
-        <% end %>
-        <%= f.form_group :domestic_violence_shelter, label: { text: 'Domestic violence shelter'} do %>
-            <%= f.radio_button :domestic_violence_shelter, 0, label: 'Yes' %>
-            <%= f.radio_button :domestic_violence_shelter, 1, label: 'No' %>
-        <% end %>
-        <%= f.form_group :anger_management, label: { text: 'Anger management'} do %>
-            <%= f.radio_button :anger_management, 0, label: 'Yes' %>
-            <%= f.radio_button :anger_management, 1, label: 'No' %>
-        <% end %>
-        <%= f.form_group :domestic_violence_none, label: { text: 'None of these'} do %>
-            <%= f.radio_button :domestic_violence_none, 0, label: 'Yes' %>
-            <%= f.radio_button :domestic_violence_none, 1, label: 'No' %>
-        <% end %>
-    </div>
+    <%= f.form_group :domestic_violence, class: 'section', label: { text: 'Would you like help with any of the following?'}, help: 'All of your answers are confidential.' do %>
+        <%= f.check_box :domestic_violence, label: 'Domestic violence hotline' %>
+        <%= f.check_box :domestic_violence, label: 'Domestic violence counseling' %>
+        <%= f.check_box :domestic_violence, label: 'Domestic violence shelter' %>
+        <%= f.check_box :domestic_violence, label: 'Anger management' %>
+        <%= f.check_box :domestic_violence, label: 'None of these' %>
+    <% end %>
     <%= f.submit 'Submit', id: 'btn-submit' %>
   <% end %>
 
