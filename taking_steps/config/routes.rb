@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :services
+
   root              'static_pages#home'
   get 'home' =>     'static_pages#home'
   get 'about' =>    'static_pages#about'
