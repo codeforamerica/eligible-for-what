@@ -1,6 +1,8 @@
 @import "bootstrap-sprockets";
 @import "bootstrap";
 
+$header: #0099CC;
+
 /* universal */
 
 body {
@@ -66,6 +68,10 @@ p {
 #logo:hover {
   color: #fff;
   text-decoration: none;
+}
+
+.navbar-inverse {
+  background-color: $header;
 }
 
 /* prev/next buttons */
