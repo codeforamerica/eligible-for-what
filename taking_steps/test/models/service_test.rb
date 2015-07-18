@@ -1,10 +1,6 @@
 require 'test_helper'
 
 class ServiceTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
-
   def setup
     @service = Service.new(name: 'Sample Service', description: 'This is an example of a service.', location: '12345 Main Street, Oakland, CA 94607', organization: 'Test Organization')
   end
