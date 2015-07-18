@@ -4,8 +4,7 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    # @TODO: Expand this to be more comprehensive, of course. Preliminary example.
-    @services = Service.where(["location LIKE ?", "%#{params[:address_city]}%"])
+    @services = Service.search(params[:address_city])
   end
 
   # GET /services/1
