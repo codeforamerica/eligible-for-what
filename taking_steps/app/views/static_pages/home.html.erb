@@ -1,7 +1,7 @@
 <!--<h1>Taking Steps</h1>-->
 <!-- @todo: Move the following intake form to a separate page and refactor all of this as partials. Have home.html be a genuine orientation to what's going on here. -->
 
-  <%= bootstrap_form_tag url: '/query' do |f| %>
+  <%= bootstrap_form_tag url: query_path, :method => 'post' do |f| %>
     <!-- @todo: Figure out a better way to handle address. Consider offering to
          autodetect location, but keep in mind that people might find it creepy. You could try a "Use my location" button a la Gas Buddy, I suppose. -->
 
