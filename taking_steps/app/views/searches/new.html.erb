@@ -2,7 +2,12 @@
     <!-- The documentation says this should be wrapper_class but class is what works. (https://github.com/bootstrap-ruby/rails-bootstrap-forms#additional-form-group-attributes) -->
     <%= f.form_group :address, class: 'section', help: 'We will use your address to find services near your location. All personal information will be kept private.' do %>
 
+        <%= f.text_field :address_street, label: 'Street address:', value: '1234 Main Street' %>
+
+        <%= f.text_field :address_apt, label: 'Apartment/unit/floor:' %>
         <%= f.text_field :address_city, label: 'City:' %>
+        <%= f.text_field :address_state, label: 'State:', value: 'CA' %>
+        <%= f.number_field :address_zip, label: 'ZIP:' %>
     <% end %>
 
     <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
