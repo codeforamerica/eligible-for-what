@@ -1,18 +1,24 @@
-<h1>Search Results</h1>
+<p id="notice"><%= notice %></p>
+
+<h1>Your options include:</h1>
 
 <% if @search.search_services.empty? %>
 
-  <p>No records found</p> <!-- @todo: Rephrase to be more positive, of course -->
+  <p>No records found</p> <!-- @todo: Rephrase to redirect to other options -->
 
 <% else %>
 
-  <% @search.search_services.each do |c| %>
+  <% @search.search_services.each do |service| %>
     <br />
 
     <div class="div">
-      <h3><%= c.name %></h3>
-      <p>Location: <%= c.location %></p>
-      <p>Specifically for veterans? <%= c.veteran %></p>
+      <h3><%= service.name %></h3>
+      <p><%= service.location %></p>
+      <p>
+        <% if service.veteran? %>
+          Specifically for veterans
+        <% end %>
+      </p>
     </div>
   <% end %>
 
