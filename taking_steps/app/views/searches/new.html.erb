@@ -1,21 +1,19 @@
-<!-- @todo: Update home.html.erb to walk people through the intro to what this is and then direct them here once they're ready to start. -->
-<h1>Search</h1>
+  <%= bootstrap_form_for(@search) do |f| %>
+    <!-- The documentation says this should be wrapper_class but class is what works. (https://github.com/bootstrap-ruby/rails-bootstrap-forms#additional-form-group-attributes) -->
+    <%= f.form_group :address, class: 'section', help: 'We will use your address to find services near your location. All personal information will be kept private.' do %>
 
-<%= form_for @search, html: { class: "pure-form" } do |s| %>
+        <%= f.text_field :address_city, label: 'City:' %>
+    <% end %>
 
-  <div class="field">
-    <%= s.label :address_city %><br />
-    <%= s.text_field :address_city %>
+    <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
+        <%= f.radio_button :veteran, true, label: 'Yes' %>
+        <%= f.radio_button :veteran, false, label: 'No' %>
+    <% end %>
+
+    <%= f.submit 'Submit', id: 'btn-submit' %>
+  <% end %>
+
+  <div class="nav-buttons">
+      <button class="btn btn-default btn-previous" type="button">Previous</button>
+      <button class="btn btn-default btn-next" type="button">Next</button>
   </div>
-
-  <div class="field">
-    <%= s.label :veteran %><br />
-    Yes <%= s.radio_button :veteran, true, label: 'Yes' %>
-    No <%= s.radio_button :veteran, false, label: 'No' %>
-  </div>
-
-  <div class="actions">
-    <%= s.submit "Search", class: "pure-button pure-button-primary" %>
-  </div>
-
-<% end %>
