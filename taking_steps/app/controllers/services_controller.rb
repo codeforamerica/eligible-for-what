@@ -4,7 +4,6 @@ class ServicesController < ApplicationController
   # GET /services
   # GET /services.json
   def index
-    @services = Service.search(params[:address_city])
   end
 
   # GET /services/1
