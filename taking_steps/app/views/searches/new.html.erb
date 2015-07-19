@@ -1,0 +1,21 @@
+<!-- @todo: Update home.html.erb to walk people through the intro to what this is and then direct them here once they're ready to start. -->
+<h1>Search</h1>
+
+<%= form_for @search, html: { class: "pure-form" } do |s| %>
+
+  <div class="field">
+    <%= s.label :city %><br />
+    <%= s.text_field :city %>
+  </div>
+
+  <div class="field">
+    <%= s.label :veterans %><br />
+    Yes <%= s.radio_button :veterans, true, label: 'Yes' %>
+    No <%= s.radio_button :veterans, false, label: 'No' %>
+  </div>
+
+  <div class="actions">
+    <%= s.submit "Search", class: "pure-button pure-button-primary" %>
+  </div>
+
+<% end %>

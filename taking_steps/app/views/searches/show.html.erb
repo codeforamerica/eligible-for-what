@@ -1,0 +1,19 @@
+<h1>Search Results</h1>
+
+<% if @search.search_services.empty? %>
+
+  <p>No records found</p> <!-- @todo: Rephrase to be more positive, of course -->
+
+<% else %>
+
+  <% @search.search_services.each do |c| %>
+    <br />
+
+    <div class="div">
+      <h3><%= c.name %></h3>
+      <p>Location: <%= c.location %></p>
+      <p>Specifically for veterans? <%= c.veteran %></p>
+    </div>
+  <% end %>
+
+<% end %>

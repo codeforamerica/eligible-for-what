@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   resources :services
+  resources :searches
 
   root              'static_pages#home'
   get 'home' =>     'static_pages#home'
