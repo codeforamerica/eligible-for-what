@@ -4,14 +4,14 @@
 <%= form_for @search, html: { class: "pure-form" } do |s| %>
 
   <div class="field">
-    <%= s.label :city %><br />
-    <%= s.text_field :city %>
+    <%= s.label :address_city %><br />
+    <%= s.text_field :address_city %>
   </div>
 
   <div class="field">
-    <%= s.label :veterans %><br />
-    Yes <%= s.radio_button :veterans, true, label: 'Yes' %>
-    No <%= s.radio_button :veterans, false, label: 'No' %>
+    <%= s.label :veteran %><br />
+    Yes <%= s.radio_button :veteran, true, label: 'Yes' %>
+    No <%= s.radio_button :veteran, false, label: 'No' %>
   </div>
 
   <div class="actions">
