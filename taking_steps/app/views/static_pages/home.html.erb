@@ -1,90 +1,13 @@
-<!--<h1>Taking Steps</h1>-->
-<!-- @todo: Move the following intake form to a separate page and refactor all of this as partials. Have home.html be a genuine orientation to what's going on here. -->
+<div class="container-fluid">
+    <row>
+        <p>Have you or someone you know been harmed by violence or crime?</p>
 
-  <%= bootstrap_form_tag url: query_path, :method => 'post' do |f| %>
-    <!-- @todo: Figure out a better way to handle address. Consider offering to
-         autodetect location, but keep in mind that people might find it creepy. You could try a "Use my location" button a la Gas Buddy, I suppose. -->
+        <p>Taking Steps can help you find places that can provide the services you want, even if you don&rsquo;t know what&rsquo;s available.</p>
 
-    <!-- The documentation says this should be wrapper_class but class is what works. (https://github.com/bootstrap-ruby/rails-bootstrap-forms#additional-form-group-attributes) -->
-    <%= f.form_group :address, class: 'section', help: 'We will use your address to find services near your location. All personal information will be kept private.' do %>
+        <p>Just answer a few questions about your situation and we&rsquo;ll tell you about your options.</p>
 
-        <%= f.text_field :address_street, label: 'Street address:', value: '1234 Main Street' %>
+        <p>It&rsquo;s completely private and anonymous. Your information will not be viewed, saved or shared.</p>
 
-        <%= f.text_field :address_apt, label: 'Apartment/unit/floor:' %>
-        <%= f.text_field :address_city, label: 'City:' %>
-        <%= f.text_field :address_state, label: 'State:', value: 'CA' %>
-        <%= f.number_field :address_zip, label: 'ZIP:' %>
-    <% end %>
-
-    <div class="section">
-        <%= f.form_group :gender, label: { text: 'What is your gender?'} do %>
-            <%= f.check_box :gender, label: 'Female' %>
-            <%= f.check_box :gender, label: 'Male' %>
-            <%= f.check_box :gender, label: 'Other' %>
-        <% end %>
-        <%= f.form_group :transgender, label: { text: 'Do you identify as transgender or gender-variant?'} do %>
-            <%= f.radio_button :transgender, 1, label: 'Yes' %>
-            <%= f.radio_button :transgender, 0, label: 'No' %>
-        <% end %>
-    </div>
-
-    <%= f.form_group :race, class: 'section', label: { text: 'How would you describe your race?'} do %>
-        <%= f.check_box :race, label: 'Black or African-American' %>
-        <%= f.check_box :race, label: 'Asian/Pacific Islander' %>
-        <%= f.check_box :race, label: 'American Indian or Native American' %>
-        <%= f.check_box :race, label: 'White or Caucasian' %>
-        <%= f.check_box :race, label: 'Hispanic or Latino/a' %>
-        <%= f.check_box :race, label: 'Other' %>
-    <% end %>
-
-    <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
-        <%= f.radio_button :veteran, 0, label: 'Yes' %>
-        <%= f.radio_button :veteran, 1, label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :age, class: 'section', label: { text: 'Age:'} do %>
-        <%= f.radio_button :age, 0, label: 'I am younger than 18' %>
-        <%= f.radio_button :age, 1, label: 'I\'m over 18 but not a senior citizen' %>
-        <%= f.radio_button :age, 2, label: 'I\'m a senior citizen' %>
-    <% end %>
-
-    <div class="section">
-        <p>No matter how well people get along, there are times when they disagree, get annoyed or have fights. The next few questions address whether you have been affected by violence as a way to settle differences. Your answers will be kept private.</p>
-    </div>
-
-    <%= f.form_group :abuse_verbal_emotional, class: 'section', label: { text: 'In the past 12 months, have you been emotionally or verbally abused by your partner or someone important to you; for example, has anyone sworn at you, threatened to hit you, or threatened to throw something at you?'} do %>
-        <%= f.radio_button :abuse_verbal_emotional, 0, label: 'Yes' %>
-        <%= f.radio_button :abuse_verbal_emotional, 1, label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :abuse_physical_past_year, class: 'section', label: { text: 'In the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt by your partner or someone close to you?'} do %>
-        <%= f.radio_button :abuse_physical_past_year, 0, label: 'Yes' %>
-        <%= f.radio_button :abuse_physical_past_year, 1, label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :abuse_physical_past_month, class: 'section', label: { text: 'In the past month have you been hit, slapped, kicked or otherwise physically hurt by your partner or someone close to you?'} do %>
-        <%= f.radio_button :abuse_physical_past_month, 0, label: 'Yes' %>
-        <%= f.radio_button :abuse_physical_past_month, 1, label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :domestic_violence, class: 'section', label: { text: 'Would you like help with any of the following?'}, help: 'All of your answers are confidential.' do %>
-        <%= f.check_box :domestic_violence, label: 'Domestic violence hotline' %>
-        <%= f.check_box :domestic_violence, label: 'Domestic violence counseling' %>
-        <%= f.check_box :domestic_violence, label: 'Domestic violence shelter' %>
-        <%= f.check_box :domestic_violence, label: 'Anger management' %>
-        <%= f.check_box :domestic_violence, label: 'None of these' %>
-    <% end %>
-
-    <%= f.form_group :mental_health, class: 'section', label: { text: 'Would you like help with any of the following?'}, help: 'All of your answers are confidential.' do %>
-        <%= f.check_box :mental_health, label: 'Suicide prevention' %>
-        <%= f.check_box :mental_health, label: 'Mental health counseling or therapy' %>
-        <%= f.check_box :mental_health, label: 'None of these' %>
-    <% end %>
-
-    <%= f.submit 'Submit', id: 'btn-submit' %>
-  <% end %>
-
-  <div class="nav-buttons">
-      <button class="btn btn-default btn-previous" type="button">Previous</button>
-      <button class="btn btn-default btn-next" type="button">Next</button>
-  </div>
+        <%= link_to "Let's Go", new_search_path %>
+    </row>
+</div>
