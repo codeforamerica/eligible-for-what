@@ -15,7 +15,6 @@ class SearchesController < ApplicationController
 
   def search_params
     params.require(:search).permit(:address_street,
-                                   :address_apt,
                                    :address_city,
                                    :address_state,
                                    :address_zip,
