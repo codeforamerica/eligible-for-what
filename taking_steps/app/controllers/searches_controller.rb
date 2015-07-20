@@ -1,6 +1,7 @@
 class SearchesController < ApplicationController
   def new
     @search = Search.new
+#    @categories = Service.uniq.pluck(:category)
   end
 
   def create
@@ -17,7 +18,11 @@ class SearchesController < ApplicationController
                                    :address_city,
                                    :address_state,
                                    :address_zip,
-                                   :veteran)
+                                   :gender,
+                                   :transgender,
+                                   :race,
+                                   :veteran,
+                                   :age)
   end
 
 end

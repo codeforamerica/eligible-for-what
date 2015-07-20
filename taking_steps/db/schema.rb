@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150719215559) do
+ActiveRecord::Schema.define(version: 20150720005517) do
 
   create_table "searches", force: :cascade do |t|
     t.string   "address_city"
@@ -22,6 +22,10 @@ ActiveRecord::Schema.define(version: 20150719215559) do
     t.string   "address_apt"
     t.string   "address_state"
     t.integer  "address_zip"
+    t.string   "gender"
+    t.boolean  "transgender"
+    t.string   "race"
+    t.string   "age"
   end
 
   create_table "services", force: :cascade do |t|

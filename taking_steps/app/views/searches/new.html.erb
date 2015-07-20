@@ -10,9 +10,34 @@
         <%= f.number_field :address_zip, label: 'ZIP:' %>
     <% end %>
 
+    <%= f.form_group :gender, class: 'section', label: { text: 'What is your gender?'} do %>
+        <%= f.check_box :gender, label: 'Female' %>
+        <%= f.check_box :gender, label: 'Male' %>
+        <%= f.check_box :gender, label: 'Other' %>
+    <% end %>
+    <%= f.form_group :transgender, class: 'section', label: { text: 'Do you identify as transgender or gender-variant?'} do %>
+        <%= f.radio_button :transgender, 1, label: 'Yes' %>
+        <%= f.radio_button :transgender, 0, label: 'No' %>
+    <% end %>
+
+    <%= f.form_group :race, class: 'section', label: { text: 'How would you describe your race?'} do %>
+        <%= f.check_box :race, label: 'Black or African-American' %>
+        <%= f.check_box :race, label: 'Asian/Pacific Islander' %>
+        <%= f.check_box :race, label: 'American Indian or Native American' %>
+        <%= f.check_box :race, label: 'White or Caucasian' %>
+        <%= f.check_box :race, label: 'Hispanic or Latino/a' %>
+        <%= f.check_box :race, label: 'Other' %>
+    <% end %>
+
     <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
         <%= f.radio_button :veteran, true, label: 'Yes' %>
         <%= f.radio_button :veteran, false, label: 'No' %>
+    <% end %>
+
+    <%= f.form_group :age, class: 'section', label: { text: 'Age:'} do %>
+        <%= f.radio_button :age, 0, label: 'I am younger than 18' %>
+        <%= f.radio_button :age, 1, label: 'I\'m over 18 but not a senior citizen' %>
+        <%= f.radio_button :age, 2, label: 'I\'m a senior citizen' %>
     <% end %>
 
     <%= f.submit 'Submit', id: 'btn-submit' %>
