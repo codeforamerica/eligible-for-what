@@ -13,7 +13,9 @@
 
     <div class="div">
       <h3><%= service.name %></h3>
-      <p><%= service.location %></p>
+      <p>
+        <%= link_to service.location, service.google_maps_link(service.location) %>
+      </p>
       <p>
         <% if service.veteran? %>
           Specifically for veterans
