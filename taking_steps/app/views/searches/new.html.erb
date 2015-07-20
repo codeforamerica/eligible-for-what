@@ -40,6 +40,39 @@
         <%= f.radio_button :age, 2, label: 'I\'m a senior citizen' %>
     <% end %>
 
+    <div class="section">
+        <p>No matter how well people get along, there are times when they disagree, get annoyed or have fights. The next few questions address whether you have been affected by violence as a way to settle differences. Your answers will be kept private.</p>
+    </div>
+
+    <%= f.form_group :abuse_verbal_emotional, class: 'section', label: { text: 'In the past 12 months, have you been emotionally or verbally abused by your partner or someone important to you; for example, has anyone sworn at you, threatened to hit you, or threatened to throw something at you?'} do %>
+        <%= f.radio_button :abuse_verbal_emotional_past_year, 0, label: 'Yes' %>
+        <%= f.radio_button :abuse_verbal_emotional_past_year, 1, label: 'No' %>
+    <% end %>
+
+    <%= f.form_group :abuse_physical_past_year, class: 'section', label: { text: 'In the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt by your partner or someone close to you?'} do %>
+        <%= f.radio_button :abuse_physical_past_year, 0, label: 'Yes' %>
+        <%= f.radio_button :abuse_physical_past_year, 1, label: 'No' %>
+    <% end %>
+
+    <%= f.form_group :abuse_physical_past_month, class: 'section', label: { text: 'In the past month have you been hit, slapped, kicked or otherwise physically hurt by your partner or someone close to you?'} do %>
+        <%= f.radio_button :abuse_physical_past_month, 0, label: 'Yes' %>
+        <%= f.radio_button :abuse_physical_past_month, 1, label: 'No' %>
+    <% end %>
+
+    <%= f.form_group :domestic_violence, class: 'section', label: { text: 'Would you like help with any of the following?'}, help: 'All of your answers are confidential.' do %>
+        <%= f.check_box :domestic_violence, label: 'Domestic violence hotline' %>
+        <%= f.check_box :domestic_violence, label: 'Domestic violence counseling' %>
+        <%= f.check_box :domestic_violence, label: 'Domestic violence shelter' %>
+        <%= f.check_box :domestic_violence, label: 'Anger management' %>
+        <%= f.check_box :domestic_violence, label: 'None of these' %>
+    <% end %>
+
+    <%= f.form_group :mental_health, class: 'section', label: { text: 'Would you like help with any of the following?'}, help: 'All of your answers are confidential.' do %>
+        <%= f.check_box :mental_health, label: 'Suicide prevention' %>
+        <%= f.check_box :mental_health, label: 'Mental health counseling or therapy' %>
+        <%= f.check_box :mental_health, label: 'None of these' %>
+    <% end %>
+
     <%= f.submit 'Submit', id: 'btn-submit' %>
   <% end %>
 

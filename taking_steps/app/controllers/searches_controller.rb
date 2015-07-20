@@ -22,7 +22,12 @@ class SearchesController < ApplicationController
                                    :transgender,
                                    :race,
                                    :veteran,
-                                   :age)
+                                   :age,
+                                   :abuse_verbal_emotional_past_year,
+                                   :abuse_physical_past_year,
+                                   :abuse_physical_past_month,
+                                   :domestic_violence,
+                                   :mental_health)
   end
 
 end

@@ -16,8 +16,8 @@ ActiveRecord::Schema.define(version: 20150720005517) do
   create_table "searches", force: :cascade do |t|
     t.string   "address_city"
     t.boolean  "veteran"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",                       null: false
+    t.datetime "updated_at",                       null: false
     t.string   "address_street"
     t.string   "address_apt"
     t.string   "address_state"
@@ -26,6 +26,11 @@ ActiveRecord::Schema.define(version: 20150720005517) do
     t.boolean  "transgender"
     t.string   "race"
     t.string   "age"
+    t.boolean  "abuse_verbal_emotional_past_year"
+    t.boolean  "abuse_physical_past_year"
+    t.boolean  "abuse_physical_past_month"
+    t.string   "domestic_violence"
+    t.string   "mental_health"
   end
 
   create_table "services", force: :cascade do |t|
