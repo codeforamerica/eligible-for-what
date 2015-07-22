@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722063437) do
+ActiveRecord::Schema.define(version: 20150722075949) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "category"
@@ -50,6 +50,20 @@ ActiveRecord::Schema.define(version: 20150722063437) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
+
+  create_table "services_properties", id: false, force: :cascade do |t|
+    t.integer "service_id"
+    t.integer "property_id"
+  end
+
+  add_index "services_properties", ["service_id", "property_id"], name: "index_services_properties_on_service_id_and_property_id"
+
+  create_table "services_tags", id: false, force: :cascade do |t|
+    t.integer "service_id"
+    t.integer "tag_id"
+  end
+
+  add_index "services_tags", ["service_id", "tag_id"], name: "index_services_tags_on_service_id_and_tag_id"
 
   create_table "tags", force: :cascade do |t|
     t.string   "area"
