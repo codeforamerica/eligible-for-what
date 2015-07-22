@@ -21,6 +21,13 @@ ActiveRecord::Schema.define(version: 20150722075949) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "properties_services", id: false, force: :cascade do |t|
+    t.integer "service_id"
+    t.integer "property_id"
+  end
+
+  add_index "properties_services", ["service_id", "property_id"], name: "index_properties_services_on_service_id_and_property_id"
+
   create_table "searches", force: :cascade do |t|
     t.string   "address_city"
     t.boolean  "veteran"
@@ -50,13 +57,6 @@ ActiveRecord::Schema.define(version: 20150722075949) do
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
-
-  create_table "services_properties", id: false, force: :cascade do |t|
-    t.integer "service_id"
-    t.integer "property_id"
-  end
-
-  add_index "services_properties", ["service_id", "property_id"], name: "index_services_properties_on_service_id_and_property_id"
 
   create_table "services_tags", id: false, force: :cascade do |t|
     t.integer "service_id"

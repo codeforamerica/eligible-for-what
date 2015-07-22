@@ -6,10 +6,10 @@ class AddTagAndPropertyLookupTables < ActiveRecord::Migration
 
     add_index :services_tags, [:service_id, :tag_id]
 
-    create_table :services_properties, :id => false do |t|
+    create_table :properties_services, :id => false do |t|
       t.references :service, :property
     end
 
-    add_index :services_properties, [:service_id, :property_id]
+    add_index :properties_services, [:service_id, :property_id]
   end
 end
