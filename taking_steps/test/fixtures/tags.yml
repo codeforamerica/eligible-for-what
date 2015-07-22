@@ -3,9 +3,9 @@
 one:
   area: MyString
   category: MyString
-  tag: MyString
+  name: MyString
 
 two:
   area: MyString
   category: MyString
-  tag: MyString
+  name: MyString

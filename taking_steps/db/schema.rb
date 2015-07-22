@@ -54,7 +54,7 @@ ActiveRecord::Schema.define(version: 20150722063437) do
   create_table "tags", force: :cascade do |t|
     t.string   "area"
     t.string   "category"
-    t.string   "tag"
+    t.string   "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

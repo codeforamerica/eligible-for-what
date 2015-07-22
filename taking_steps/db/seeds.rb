@@ -330,8 +330,8 @@ property_list = [
   [ 'Housing attribute', 'housing-wheelchair-access', 'Housing property units are accessible for people in wheelchairs.' ]
 ]
 
-tag_list.each do |area, category, tag|
-  Tag.create( area: area, category: category, tag: tag )
+tag_list.each do |area, category, name|
+  Tag.create( area: area, category: category, name: name )
 end
 
 property_list.each do |category, name, description|
