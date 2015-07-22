@@ -12,7 +12,7 @@
 
 <p>
   <strong>Location:</strong>
-  <%= @service.location %>
+  <%= @service.location %> (<%= link_to 'map', @service.google_maps_link(@service.location) %>)
 </p>
 
 <p>
