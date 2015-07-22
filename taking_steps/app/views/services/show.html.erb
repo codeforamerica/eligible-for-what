@@ -25,6 +25,17 @@
   <%= @service.veteran %>
 </p>
 
+<% if !@service.properties.blank? %>
+  <p>
+    <strong>Open to people who are:</strong>
+    <ul>
+      <% @service.properties.each do |property| %>
+        <li><%= property.description %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
+
 <% if !@service.tags.blank? %>
   <p>
     <strong>Available services include:</strong>
