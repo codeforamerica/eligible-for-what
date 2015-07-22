@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150720005517) do
+ActiveRecord::Schema.define(version: 20150722053608) do
 
   create_table "searches", force: :cascade do |t|
     t.string   "address_city"
@@ -41,6 +41,14 @@ ActiveRecord::Schema.define(version: 20150720005517) do
     t.boolean  "veteran"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "area"
+    t.string   "category"
+    t.string   "tag"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
 end
