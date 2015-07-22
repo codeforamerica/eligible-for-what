@@ -25,5 +25,16 @@
   <%= @service.veteran %>
 </p>
 
+<% if !@service.tags.blank? %>
+  <p>
+    <strong>Available services include:</strong>
+    <ul>
+      <% @service.tags.each do |tag| %>
+        <li><%= tag.name %></li>
+      <% end %>
+    </ul>
+  </p>
+<% end %>
+
 <%= link_to 'Edit', edit_service_path(@service) %> |
 <%= link_to 'Back', services_path %>
