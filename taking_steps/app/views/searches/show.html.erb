@@ -22,6 +22,30 @@
           Specifically for veterans
         <% end %>
       </p>
+      <% # @todo: Refactor the below as two helper functions. They're also used
+         # in app/views/services/show.html.erb. DRY.
+      %>
+      <% if !service.properties.blank? %>
+        <p>
+          <strong>Open to people who are:</strong>
+          <ul>
+            <% service.properties.each do |property| %>
+              <li><%= property.description %></li>
+            <% end %>
+          </ul>
+        </p>
+      <% end %>
+
+      <% if !service.tags.blank? %>
+        <p>
+          <strong>Available services include:</strong>
+          <ul>
+            <% service.tags.each do |tag| %>
+              <li><%= tag.name %></li>
+            <% end %>
+          </ul>
+        </p>
+      <% end %>
     </div>
   <% end %>
 
