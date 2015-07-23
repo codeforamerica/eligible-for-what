@@ -1,76 +1,9 @@
   <%= bootstrap_form_for(@search) do |f| %>
     <!-- The documentation says this should be wrapper_class but class is what works. (https://github.com/bootstrap-ruby/rails-bootstrap-forms#additional-form-group-attributes) -->
-    <%= f.form_group :address, class: 'section', help: 'We will use your address to find services near your location. All personal information will be kept private.' do %>
-
-        <%= f.text_field :address_street, label: 'Street address:', value: '1234 Main Street' %>
-        <%= f.text_field :address_city, label: 'City:' %>
-        <%= f.text_field :address_state, label: 'State:', value: 'CA' %>
-        <%= f.number_field :address_zip, label: 'ZIP:' %>
-    <% end %>
-
-    <%= f.form_group :gender, class: 'section', label: { text: 'What is your gender?'} do %>
-        <%= f.check_box :gender, label: 'Female' %>
-        <%= f.check_box :gender, label: 'Male' %>
-        <%= f.check_box :gender, label: 'Other' %>
-    <% end %>
-    <%= f.form_group :transgender, class: 'section', label: { text: 'Do you identify as transgender or gender-variant?'} do %>
-        <%= f.radio_button :transgender, 't', label: 'Yes' %>
-        <%= f.radio_button :transgender, 'f', label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :race, class: 'section', label: { text: 'How would you describe your race?'} do %>
-        <%= f.check_box :race, label: 'Black or African-American' %>
-        <%= f.check_box :race, label: 'Asian/Pacific Islander' %>
-        <%= f.check_box :race, label: 'American Indian or Native American' %>
-        <%= f.check_box :race, label: 'White or Caucasian' %>
-        <%= f.check_box :race, label: 'Hispanic or Latino/a' %>
-        <%= f.check_box :race, label: 'Other' %>
-    <% end %>
-
-    <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
-        <%= f.radio_button :veteran, 't', label: 'Yes' %>
-        <%= f.radio_button :veteran, 'f', label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :age, class: 'section', label: { text: 'Age:'} do %>
-        <%= f.radio_button :age, 0, label: 'I am younger than 18' %>
-        <%= f.radio_button :age, 1, label: 'I\'m over 18 but not a senior citizen' %>
-        <%= f.radio_button :age, 2, label: 'I\'m a senior citizen' %>
-    <% end %>
-
-    <div class="section">
-        <p>No matter how well people get along, there are times when they disagree, get annoyed or have fights. The next few questions address whether you have been affected by violence as a way to settle differences. Your answers will be kept private.</p>
-    </div>
-
-    <!-- @todo: Consider whether to update this to allow for broader sources and kinds of trauma, not only violence that comes from an intimate partner. -->
-
-    <%= f.form_group :abuse_verbal_emotional, class: 'section', label: { text: 'In the past 12 months, have you been emotionally or verbally abused by your partner or someone important to you; for example, has anyone sworn at you, threatened to hit you, or threatened to throw something at you?'} do %>
-        <%= f.radio_button :abuse_verbal_emotional_past_year, 't', label: 'Yes' %>
-        <%= f.radio_button :abuse_verbal_emotional_past_year, 'f', label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :abuse_physical_past_year, class: 'section', label: { text: 'In the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt by your partner or someone close to you?'} do %>
-        <%= f.radio_button :abuse_physical_past_year, 't', label: 'Yes' %>
-        <%= f.radio_button :abuse_physical_past_year, 'f', label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :abuse_physical_past_month, class: 'section', label: { text: 'In the past month have you been hit, slapped, kicked or otherwise physically hurt by your partner or someone close to you?'} do %>
-        <%= f.radio_button :abuse_physical_past_month, 't', label: 'Yes' %>
-        <%= f.radio_button :abuse_physical_past_month, 'f', label: 'No' %>
-    <% end %>
-
-    <%= f.form_group :domestic_violence, class: 'section', label: { text: 'Would you like help with any of the following?'}, help: 'All of your answers are confidential.' do %>
-        <%= f.check_box :domestic_violence, label: 'Domestic violence hotline' %>
-        <%= f.check_box :domestic_violence, label: 'Domestic violence counseling' %>
-        <%= f.check_box :domestic_violence, label: 'Domestic violence shelter' %>
-        <%= f.check_box :domestic_violence, label: 'Anger management' %>
-        <%= f.check_box :domestic_violence, label: 'None of these' %>
-    <% end %>
-
-    <%= f.form_group :mental_health, class: 'section', label: { text: 'Would you like help with any of the following?'}, help: 'All of your answers are confidential.' do %>
-        <%= f.check_box :mental_health, label: 'Suicide prevention' %>
-        <%= f.check_box :mental_health, label: 'Mental health counseling or therapy' %>
-        <%= f.check_box :mental_health, label: 'None of these' %>
+    <!-- Magic number below is tag_id, as an interim measure. -->
+    <%= f.form_group :domestic_violence_hotline, class: 'section', label: { text: 'Are you interested in a domestic violence hotline?'} do %>
+        <%= f.radio_button :domestic_violence_hotline, 't', label: 'Yes' %>
+        <%= f.radio_button :domestic_violence_hotline, 'f', label: 'No' %>
     <% end %>
 
     <%= f.submit 'Submit', id: 'btn-submit' %>
