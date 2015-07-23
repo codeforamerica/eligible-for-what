@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722075949) do
+ActiveRecord::Schema.define(version: 20150723001245) do
 
   create_table "properties", force: :cascade do |t|
     t.string   "category"
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20150722075949) do
     t.boolean  "abuse_physical_past_month"
     t.string   "domestic_violence"
     t.string   "mental_health"
+    t.boolean  "domestic_violence_hotline"
   end
 
   create_table "services", force: :cascade do |t|
