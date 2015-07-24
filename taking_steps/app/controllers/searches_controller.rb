@@ -14,8 +14,7 @@ class SearchesController < ApplicationController
   end
 
   def search_params
-    params.require(:search).permit(:domestic_violence_hotline,
-                                   :address_street,
+    params.require(:search).permit(:address_street,
                                    :address_city,
                                    :address_state,
                                    :address_zip,
