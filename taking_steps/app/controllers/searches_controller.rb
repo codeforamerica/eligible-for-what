@@ -24,6 +24,8 @@ class SearchesController < ApplicationController
                                    :race,
                                    :veteran,
                                    :age,
+                                   :public_transit,
+                                   :wheelchair,
                                    :abuse_verbal_emotional_past_year,
                                    :abuse_physical_past_year,
                                    :abuse_physical_past_month,
