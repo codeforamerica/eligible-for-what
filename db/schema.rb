@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150724041318) do
+ActiveRecord::Schema.define(version: 20150728175710) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,7 +42,7 @@ ActiveRecord::Schema.define(version: 20150724041318) do
     t.integer  "address_zip"
     t.string   "gender"
     t.boolean  "transgender"
-    t.string   "race"
+    t.string   "affiliation"
     t.string   "age"
     t.boolean  "abuse_verbal_emotional_past_year"
     t.boolean  "abuse_physical_past_year"
@@ -52,6 +52,8 @@ ActiveRecord::Schema.define(version: 20150724041318) do
     t.boolean  "domestic_violence_hotline"
     t.boolean  "public_transit"
     t.boolean  "wheelchair"
+    t.string   "language"
+    t.boolean  "free"
   end
 
   create_table "services", force: :cascade do |t|

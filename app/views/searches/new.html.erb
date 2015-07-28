@@ -44,6 +44,10 @@
         <%= f.radio_button :age, 4, label: 'I\'m a senior citizen' %>
     <% end %>
 
+   <div class="section">
+        <p>The next few questions are about what you look for in services. Your answers will be kept private.</p>
+    </div>
+
     <%= f.form_group :public_transit, class: 'section', label: { text: 'Do you rely on public transit?'} do %>
         <%= f.radio_button :public_transit, 't', label: 'Yes' %>
         <%= f.radio_button :public_transit, 'f', label: 'No' %>
@@ -54,21 +58,35 @@
         <%= f.radio_button :wheelchair, 'f', label: 'No' %>
     <% end %>
 
+    <%= f.form_group :free, class: 'section', label: { text: 'Do you want to see only free (no-cost) services?'} do %>
+        <%= f.radio_button :free, 't', label: 'Yes' %>
+        <%= f.radio_button :free, 'f', label: 'No' %>
+    <% end %>
+
+    <%= f.form_group :language, class: 'section', label: { text: 'Do you prefer to use any of the following languages instead of English?'} do %>
+        <%= f.check_box :language, label: 'American Sign Language (ASL)' %>
+        <%= f.check_box :language, label: 'Cantonese' %>
+        <%= f.check_box :language, label: 'Mandarin' %>
+        <%= f.check_box :language, label: 'Russian' %>
+        <%= f.check_box :language, label: 'Spanish' %>
+        <%= f.check_box :language, label: 'Tagalog' %>
+    <% end %>
+
    <div class="section">
         <p>No matter how well people get along, there are times when they disagree, get annoyed or have fights. The next few questions address whether you have been affected by violence as a way to settle differences. Your answers will be kept private.</p>
     </div>
 
-    <%= f.form_group :abuse_verbal_emotional, class: 'section', label: { text: 'In the past 12 months, have you been emotionally or verbally abused by your partner or someone important to you; for example, has anyone sworn at you, threatened to hit you, or threatened to throw something at you?'} do %>
+    <%= f.form_group :abuse_verbal_emotional, class: 'section', label: { text: 'In the past 12 months, have you been emotionally or verbally abused by anyone; for example, has anyone sworn at you, threatened to hit you, or threatened to throw something at you?'} do %>
         <%= f.radio_button :abuse_verbal_emotional_past_year, 't', label: 'Yes' %>
         <%= f.radio_button :abuse_verbal_emotional_past_year, 'f', label: 'No' %>
     <% end %>
 
-    <%= f.form_group :abuse_physical_past_year, class: 'section', label: { text: 'In the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt by your partner or someone close to you?'} do %>
+    <%= f.form_group :abuse_physical_past_year, class: 'section', label: { text: 'In the past 12 months, have you been hit, slapped, kicked or otherwise physically hurt?'} do %>
         <%= f.radio_button :abuse_physical_past_year, 't', label: 'Yes' %>
         <%= f.radio_button :abuse_physical_past_year, 'f', label: 'No' %>
     <% end %>
 
-    <%= f.form_group :abuse_physical_past_month, class: 'section', label: { text: 'In the past month have you been hit, slapped, kicked or otherwise physically hurt by your partner or someone close to you?'} do %>
+    <%= f.form_group :abuse_physical_past_month, class: 'section', label: { text: 'In the past month have you been hit, slapped, kicked or otherwise physically hurt?'} do %>
         <%= f.radio_button :abuse_physical_past_month, 't', label: 'Yes' %>
         <%= f.radio_button :abuse_physical_past_month, 'f', label: 'No' %>
     <% end %>
