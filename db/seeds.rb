@@ -335,7 +335,7 @@ example_services_list = [
   [ 'Sample Food Bank', 'Distributes meals three times a day. First come, first served.', '8621 Sample Street, Hayward, CA', 'Sample Services Inc.' ],
   [ 'Safe Now', 'Safe shelter and resources for domestic violence survivors and their children. Outreach and education to at-risk populations.', 'P.O. Box 56789, Oakland, CA 94617-56789', 'You\'re Safe Here, Inc.' ],
   [ 'Nora\'s Place', 'Shelter and supportive services for women and children who experience domestic violence and/or homelessness. Can accompany you to court and help you find a job, get restraining orders, get government aid, etc.', '13579 Example Street, Hayward, CA', 'United Shelters' ],
-  [ 'Sample Oakland Mental Health Center', 'Outpatient psychotherapy treatment for children as well as adults. No longer helps victims of domestic violence.', '1357 Fake Street, Oakland, CA', 'Saul\'s Place' ],
+  [ 'Sample Oakland Mental Health Center', 'Outpatient psychotherapy treatment for children as well as adults.', '1357 Fake Street, Oakland, CA', 'Saul\'s Place' ],
   [ 'Gang Violence Victim/Survivor Hotline', 'Runs a 24/7 hotline. Also offers help with applications for California victims compensation program.', '1237 Main Street, Hayward, CA', 'Stronger Together' ],
   [ 'Victims\' Services Unit', 'The Victims\' Services Unit can tell you the status of cases being handled by the Attorney General\'s office.', 'Alameda County', 'California Attorney General\'s Office' ],
 ]
@@ -390,6 +390,7 @@ service.properties<<Property.find(46) # available in ASL
 service.tags<<Tag.find(134)           # after school
 service.tags<<Tag.find(150)           # tutoring
 service.tags<<Tag.find(155)           # student loans
+service.tags<<Tag.find(70)            # disability advocacy & referral
 service.properties<<Property.find(91) # near public transit
 
 # Sample Support Group
@@ -418,4 +419,51 @@ service = Service.find(8)
 service.tags<<Tag.find(1)               # emergency food pantry
 service.tags<<Tag.find(2)               # emergency meals
 service.tags<<Tag.find(49)              # nutrition
+service.properties<<Property.find(22)   # free
+
+# Safe Now
+service = Service.find(9)
+service.properties<<Property.find(22)   # free
+service.properties<<Property.find(18)   # for children
+service.properties<<Property.find(29)   # men's program
+service.tags<<Tag.find(124)             # emergency shelter
+service.tags<<Tag.find(125)             # short-term shelter
+service.tags<<Tag.find(3)               # domestic violence shelter
+service.tags<<Tag.find(4)               # family emergency shelter
+service.tags<<Tag.find(29)              # domestic violence help
+service.tags<<Tag.find(41)              # emergency safety
+service.tags<<Tag.find(103)             # mental health counseling
+service.tags<<Tag.find(104)             # peer support
+service.tags<<Tag.find(105)             # support group
+
+# Nora's Place
+service = Service.find(10)
+service.tags<<Tag.find(102)             # mental health care
+service.tags<<Tag.find(103)             # mental health counseling
+service.tags<<Tag.find(104)             # peer support
+service.tags<<Tag.find(105)             # support group
+service.tags<<Tag.find(30)              # case management
+service.tags<<Tag.find(124)             # emergency shelter
+service.tags<<Tag.find(3)               # domestic violence shelter
+service.properties<<Property.find(33)   # currently homeless
+service.properties<<Property.find(30)   # female
+service.properties<<Property.find(18)   # for children
+
+# Sample Oakland Mental Health Center
+service = Service.find(11)
+service.tags<<Tag.find(102)             # mental health care
+service.tags<<Tag.find(103)             # mental health counseling
+
+# Gang Violence Victim/Survivor Hotline
+service = Service.find(12)
+service.tags<<Tag.find(8)               # crisis hotline
+service.tags<<Tag.find(30)              # case management
+service.tags<<Tag.find(31)              # mediation
+service.tags<<Tag.find(172)             # cash benefits
+service.properties<<Property.find(22)   # free
+
+# Victims' Services Unit
+service = Service.find(13)
+service.tags<<Tag.find(172)             # cash benefits
+service.tags<<Tag.find(166)             # lawyers (not quite right)
 service.properties<<Property.find(22)   # free
