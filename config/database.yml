@@ -11,19 +11,19 @@ default: &default
   timeout: 5000
 
 development:
-  <<: *default
-  database: secret_db_name
-  user: secret
-  password:
+  adapter: postgresql
+  host: localhost
+  username: fureigh
+  database: takingsteps_dev
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".
 # Do not set this db to the same as development or production.
 test:
   <<: *default
-  database: secret_db_name2
-  user: secret
-  password:
+  host: localhost
+  username: fureigh
+  database: takingsteps_test
 
 production:
   <<: *default
