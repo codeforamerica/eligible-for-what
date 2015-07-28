@@ -11,7 +11,7 @@
 tag_list = [
   [ 'emergency', 'emergency food', 'emergency food pantry' ],
   [ 'emergency', 'emergency food', 'emergency meals' ],
-  [ 'emergency', 'domestic violence shelter' ],
+  [ 'emergency', 'emergency shelter', 'domestic violence shelter' ],
   [ 'emergency', 'emergency shelter', 'family emergency shelter' ],
   [ 'emergency', 'emergency shelter', 'men\'s emergency shelter' ],
   [ 'emergency', 'emergency shelter', 'women\'s emergency shelter' ],
