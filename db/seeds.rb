@@ -391,6 +391,7 @@ service.tags<<Tag.find(134)           # after school
 service.tags<<Tag.find(150)           # tutoring
 service.tags<<Tag.find(155)           # student loans
 service.tags<<Tag.find(70)            # disability advocacy & referral
+service.properties<<Property.find(22) # free
 service.properties<<Property.find(91) # near public transit
 
 # Sample Support Group
