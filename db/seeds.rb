@@ -321,3 +321,101 @@ end
 property_list.each do |category, name, description|
   Property.create( category: category, name: name, description: description )
 end
+
+# Populate services list with dummy data for the sake of example.
+
+example_services_list = [
+  [ 'Sample Counseling Service', 'Counseling for veterans. Trauma-informed approach, PTSD-aware.', '1234 Main Street, Oakland, CA', 'Lorem Ipsum Dolor Sit' ],
+  [ 'Sample Emergency Shelter', 'One- to seven-night emergency shelter for survivors of domestic violence. Shelter located in a confidential place.', 'Oakland, CA', 'United Shelters' ],
+  [ 'Sample Childcare', 'Emergency childcare for low-income families.', '1234 Main Street, Oakland, CA', 'Lorem Ipsum Dolor Sit' ],
+  [ 'Sample Mental Health Services', 'Drop-in mental health services for homeless women.', '2345 Main Street, Berkeley, CA', 'Sample Services Inc.' ],
+  [ 'Study Support', 'Academic support for students with disabilities.', '157 Example Street, Berkeley, CA', 'CSU MadeUp' ],
+  [ 'Sample Support Group', 'Weekly support group for LGBTQ elders.', '2345 Main Street, Berkeley, CA', 'Sample Services Inc.' ],
+  [ 'Sample Food Program', 'Nutritious food for low-income pregnant and breastfeeding women, as well as infants and children.', '2345 Main Street, Berkeley, CA', 'Sample Services Inc.' ],
+  [ 'Sample Food Bank', 'Distributes meals three times a day. First come, first served.', '8621 Sample Street, Hayward, CA', 'Sample Services Inc.' ],
+  [ 'Safe Now', 'Safe shelter and resources for domestic violence survivors and their children. Outreach and education to at-risk populations.', 'P.O. Box 56789, Oakland, CA 94617-56789', 'You\'re Safe Here, Inc.' ],
+  [ 'Nora\'s Place', 'Shelter and supportive services for women and children who experience domestic violence and/or homelessness. Can accompany you to court and help you find a job, get restraining orders, get government aid, etc.', '13579 Example Street, Hayward, CA', 'United Shelters' ],
+  [ 'Sample Oakland Mental Health Center', 'Outpatient psychotherapy treatment for children as well as adults. No longer helps victims of domestic violence.', '1357 Fake Street, Oakland, CA', 'Saul\'s Place' ],
+  [ 'Gang Violence Victim/Survivor Hotline', 'Runs a 24/7 hotline. Also offers help with applications for California victims compensation program.', '1237 Main Street, Hayward, CA', 'Stronger Together' ],
+  [ 'Victims\' Services Unit', 'The Victims\' Services Unit can tell you the status of cases being handled by the Attorney General\'s office.', 'Alameda County', 'California Attorney General\'s Office' ],
+]
+
+example_services_list.each do |name, description, location, organization|
+  Service.create( name: name, description: description, location: location, organization: organization )
+end
+
+# Then associate services with particular tags and properties.
+# @todo: Room for improvement includes refactoring this so it doesn't rely on
+# magic numbers.
+
+# Sample Counseling Service
+service = Service.find(1)
+service.properties<<Property.find(44) # veteran
+service.properties<<Property.find(1)  # wheelchair-accessible
+service.properties<<Property.find(6)  # disabled community
+service.tags<<Tag.find(103)           # mental health counseling
+
+# Sample Emergency Shelter
+service = Service.find(2)
+service.tags<<Tag.find(3) # emergency domestic violence shelter
+service.properties<<Property.find(22) # free
+
+# Sample Childcare
+service = Service.find(3)
+service.tags<<Tag.find(15) # childcare
+service.tags<<Tag.find(17) # help finding childcare
+service.tags<<Tag.find(21) # parenting
+service.tags<<Tag.find(13) # baby supplies
+service.tags<<Tag.find(24) # baby clothing
+service.properties<<Property.find(22) # free
+service.properties<<Property.find(91)   # near public transit
+
+# Sample Mental Health Services
+service = Service.find(4)
+service.properties<<Property.find(33)   # currently homeless
+service.properties<<Property.find(30)   # female
+service.tags<<Tag.find(100)             # grief
+service.tags<<Tag.find(102)             # mental health care
+service.tags<<Tag.find(103)             # mental health counseling
+service.tags<<Tag.find(104)             # peer support
+service.tags<<Tag.find(105)             # support group
+service.properties<<Property.find(22)   # free
+service.properties<<Property.find(91)   # near public transit
+
+# Study Support
+service = Service.find(5)
+service.properties<<Property.find(1)  # wheelchair-accessible
+service.properties<<Property.find(6)  # disabled community
+service.properties<<Property.find(46) # available in ASL
+service.tags<<Tag.find(134)           # after school
+service.tags<<Tag.find(150)           # tutoring
+service.tags<<Tag.find(155)           # student loans
+service.properties<<Property.find(91) # near public transit
+
+# Sample Support Group
+service = Service.find(6)
+service.properties<<Property.find(19)   # for seniors
+service.properties<<Property.find(11)   # for LGBTQ people
+service.tags<<Tag.find(101)             # LGBTQ support group
+service.tags<<Tag.find(104)             # peer support
+service.tags<<Tag.find(105)             # support group
+service.properties<<Property.find(91)   # near public transit
+
+# Sample Food Program
+service = Service.find(7)
+service.properties<<Property.find(12)   # for mothers
+service.properties<<Property.find(30)   # for self-identified female
+service.tags<<Tag.find(1)               # emergency food pantry
+service.tags<<Tag.find(2)               # emergency meals
+service.tags<<Tag.find(16)              # diapers & formula
+service.tags<<Tag.find(21)              # parenting
+service.tags<<Tag.find(49)              # nutrition
+service.properties<<Property.find(22)   # free
+service.properties<<Property.find(45)   # for people receiving WIC
+
+# Sample Food Bank
+service = Service.find(8)
+service.tags<<Tag.find(1)               # emergency food pantry
+service.tags<<Tag.find(2)               # emergency meals
+service.tags<<Tag.find(49)              # nutrition
+service.properties<<Property.find(22)   # free
