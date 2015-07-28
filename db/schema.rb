@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20150724041318) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "properties", force: :cascade do |t|
     t.string   "category"
     t.string   "name"
@@ -26,7 +29,7 @@ ActiveRecord::Schema.define(version: 20150724041318) do
     t.integer "property_id"
   end
 
-  add_index "properties_services", ["service_id", "property_id"], name: "index_properties_services_on_service_id_and_property_id"
+  add_index "properties_services", ["service_id", "property_id"], name: "index_properties_services_on_service_id_and_property_id", using: :btree
 
   create_table "searches", force: :cascade do |t|
     t.string   "address_city"
@@ -65,7 +68,7 @@ ActiveRecord::Schema.define(version: 20150724041318) do
     t.integer "tag_id"
   end
 
-  add_index "services_tags", ["service_id", "tag_id"], name: "index_services_tags_on_service_id_and_tag_id"
+  add_index "services_tags", ["service_id", "tag_id"], name: "index_services_tags_on_service_id_and_tag_id", using: :btree
 
   create_table "tags", force: :cascade do |t|
     t.string   "area"
