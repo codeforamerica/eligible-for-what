@@ -17,11 +17,6 @@
         <%= service.location %>
         (<%= link_to 'map', service.google_maps_link(service.location) %>)
       </p>
-      <p>
-        <% if service.veteran? %>
-          Specifically for veterans
-        <% end %>
-      </p>
       <% # @todo: Refactor the below as two helper functions. They're also used
          # in app/views/services/show.html.erb. DRY.
       %>
