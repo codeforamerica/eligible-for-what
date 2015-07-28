@@ -8,14 +8,17 @@
         <%= f.number_field :address_zip, label: 'ZIP:' %>
     <% end %>
 
-    <%= f.form_group :gender, class: 'section', label: { text: 'What is your gender?'} do %>
-        <%= f.check_box :gender, label: 'Female' %>
-        <%= f.check_box :gender, label: 'Male' %>
-        <%= f.check_box :gender, label: 'Other' %>
+    <%= f.form_group :age, class: 'section', label: { text: 'How old are you?'} do %>
+        <%= f.radio_button :age, 0, label: 'I\'m a child' %>
+        <%= f.radio_button :age, 1, label: 'I\'m a teenager' %>
+        <%= f.radio_button :age, 2, label: 'I\'m a young adult' %>
+        <%= f.radio_button :age, 3, label: 'I\'m an adult but not a senior citizen' %>
+        <%= f.radio_button :age, 4, label: 'I\'m a senior citizen' %>
     <% end %>
-    <%= f.form_group :transgender, class: 'section', label: { text: 'Do you identify as transgender or gender-variant?'} do %>
-        <%= f.radio_button :transgender, 't', label: 'Yes' %>
-        <%= f.radio_button :transgender, 'f', label: 'No' %>
+
+    <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
+        <%= f.radio_button :veteran, 't', label: 'Yes' %>
+        <%= f.radio_button :veteran, 'f', label: 'No' %>
     <% end %>
 
     <%= f.form_group :affiliation, class: 'section', label: { text: 'Which, if any, of the following do you identify as?'} do %>
@@ -31,17 +34,14 @@
         <%= f.check_box :affiliation, label: 'Lesbian, gay, bisexual, queer and/or transgender' %>
     <% end %>
 
-    <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
-        <%= f.radio_button :veteran, 't', label: 'Yes' %>
-        <%= f.radio_button :veteran, 'f', label: 'No' %>
+    <%= f.form_group :gender, class: 'section', label: { text: 'What is your gender?'} do %>
+        <%= f.check_box :gender, label: 'Female' %>
+        <%= f.check_box :gender, label: 'Male' %>
+        <%= f.check_box :gender, label: 'Other' %>
     <% end %>
-
-    <%= f.form_group :age, class: 'section', label: { text: 'Age:'} do %>
-        <%= f.radio_button :age, 0, label: 'I\'m a child' %>
-        <%= f.radio_button :age, 1, label: 'I\'m a teenager' %>
-        <%= f.radio_button :age, 2, label: 'I\'m a young adult' %>
-        <%= f.radio_button :age, 3, label: 'I\'m an adult but not a senior citizen' %>
-        <%= f.radio_button :age, 4, label: 'I\'m a senior citizen' %>
+    <%= f.form_group :transgender, class: 'section', label: { text: 'Do you identify as transgender or gender-variant?'} do %>
+        <%= f.radio_button :transgender, 't', label: 'Yes' %>
+        <%= f.radio_button :transgender, 'f', label: 'No' %>
     <% end %>
 
    <div class="section">
