@@ -22,7 +22,7 @@
 
 <% if !@service.properties.blank? %>
   <p>
-    <strong>Open to people who are:</strong>
+    <strong>Characteristics:</strong>
     <ul>
       <% @service.properties.each do |property| %>
         <li><%= property.description %></li>
