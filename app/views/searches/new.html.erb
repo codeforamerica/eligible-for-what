@@ -18,13 +18,17 @@
         <%= f.radio_button :transgender, 'f', label: 'No' %>
     <% end %>
 
-    <%= f.form_group :race, class: 'section', label: { text: 'How would you describe your race?'} do %>
-        <%= f.check_box :race, label: 'Black or African-American' %>
-        <%= f.check_box :race, label: 'Asian/Pacific Islander' %>
-        <%= f.check_box :race, label: 'American Indian or Native American' %>
-        <%= f.check_box :race, label: 'White or Caucasian' %>
-        <%= f.check_box :race, label: 'Hispanic or Latino/a' %>
-        <%= f.check_box :race, label: 'Other' %>
+    <%= f.form_group :affiliation, class: 'section', label: { text: 'Which, if any, of the following do you identify as?'} do %>
+        <%= f.check_box :affiliation, label: 'Black or African-American' %>
+        <%= f.check_box :affiliation, label: 'Asian/Pacific Islander' %>
+        <%= f.check_box :affiliation, label: 'American Indian or Native American' %>
+        <%= f.check_box :affiliation, label: 'White or Caucasian' %>
+        <%= f.check_box :affiliation, label: 'Hispanic or Latino/a' %>
+        <%= f.check_box :affiliation, label: 'Christian' %>
+        <%= f.check_box :affiliation, label: 'Jewish' %>
+        <%= f.check_box :affiliation, label: 'Muslim' %>
+        <%= f.check_box :affiliation, label: 'Disabled or with disabilities' %>
+        <%= f.check_box :affiliation, label: 'Lesbian, gay, bisexual, queer and/or transgender' %>
     <% end %>
 
     <%= f.form_group :veteran, class: 'section', label: { text: 'Are you a veteran?'} do %>
